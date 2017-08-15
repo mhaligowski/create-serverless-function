@@ -20,6 +20,20 @@ module.exports = {
         path: path.join(__dirname, '..', 'build'),
         filename: 'createServerlessFunction.js'
     },
+    module: {
+        loaders: [
+            { 
+                test: /\.hbs/,
+                loader: "handlebars-template-loader",
+                query: {
+                    runtimePath: "handlebars"
+                }
+            }
+        ]
+    },
+    node: {
+        fs: "empty"
+    },
     plugins: [
         new GeneratePackageJsonPlugin(defaultPackageValues, path.resolve(__dirname, '..', 'package.json')),
         new webpack.BannerPlugin({
