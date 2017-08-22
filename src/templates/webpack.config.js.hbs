@@ -3,7 +3,7 @@ const GeneratePackageJsonPlugin = require('generate-package-json-webpack-plugin'
 const nodeExternals = require('webpack-node-externals');
 
 const defaultPackageValues = {
-    'name': {{ name }} :,
+    'name': ' {{ name }} ',
     'version': '1.0.0',
     'main': './index.js'
 }
@@ -15,7 +15,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: 'index.js',
-        library: {{ name }},
+        library: ' {{ name }} ',
         libraryTarget: 'commonjs2'
     },
     module: {
