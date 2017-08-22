@@ -1,0 +1,39 @@
+const path = require('path');
+const GeneratePackageJsonPlugin = require('generate-package-json-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+
+const defaultPackageValues = {
+    'name': {{ name }} :,
+    'version': '1.0.0',
+    'main': './index.js'
+}
+
+module.exports = {
+    target: 'node',
+    externals: [ nodeExternals() ],
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, '../dist'),
+        filename: 'index.js',
+        library: {{ name }},
+        libraryTarget: 'commonjs2'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [ 'env' ]
+                    }
+                }
+            }
+        ]
+    },
+    plugins: [
+        new GeneratePackageJsonPlugin(defaultPackageValues, path.resolve(__dirname, '..', 'package.json'))
+    ]
+};
+
