@@ -1,9 +1,10 @@
 {
   "name": "create-serverless-function",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handy generator for generating new serverless functions (AWS Lambda, Google Cloud Functions, etc.)",
   "main": "src/main.js",
   "author": "Mateusz Haligowski <mhaligowski@gmail.com>",
+  "repository": "github:mhaligowski/create-serverless-function",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.1.0",
