@@ -5,7 +5,7 @@ const webpack = require("webpack");
 
 const defaultPackageValues = {
     'name': 'create-serverless-function',
-    'version': '0.0.1',
+    'version': '0.0.3',
     'main': './createServerlessFunction.js',
     "bin": {
         "create-serverless-function": "./createServerlessFunction.js"
